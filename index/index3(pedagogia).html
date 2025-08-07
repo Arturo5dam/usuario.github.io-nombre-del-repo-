@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licenciatura en Pedagogía | Universidad Atenea Palas</title>
+    <meta name="description" content="Carrera de Licenciatura en Pedagogía. Formamos profesionales en educación, innovación pedagógica y gestión educativa con enfoque humanista.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #7a1c3f; /* Vino principal */
+            --secondary-color: #5a142f; /* Vino oscuro */
+            --accent-color: #d4af37; /* Dorado */
+            --accent-light: #e8c874; /* Dorado claro */
+            --light-color: #f8f5f0; /* Beige claro */
+            --dark-color: #2a0a17; /* Vino muy oscuro */
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--accent-light);
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-light);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--accent-light);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            margin: 10px;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-light);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        /* Program Highlights */
+        .highlights {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .highlight-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-body h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        
+        .card-body p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .card-footer {
+            padding: 0 25px 25px;
+        }
+        
+        /* Curriculum Section */
+        .curriculum {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .semester-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: var(--light-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background-color: #e8e8e8;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .subject-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .subject-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subject-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .subject-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent-light);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-dot.active {
+            background-color: var(--primary-color);
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(122, 28, 63, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-light);
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            color: var(--accent-light);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-column p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-column ul li i {
+            margin-right: 10px;
+            color: var(--accent-light);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .footer-column ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--dark-color);
+            background-color: var(--accent-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: inherit;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--accent-light);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="https://uniateneapalas.edu.mx/images/logo.png" alt="Universidad Atenea Palas">
+                <div class="logo-text">
+                    <h1>Universidad Atenea Palas</h1>
+                    <p>Excelencia en educación superior</p>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#about">Acerca de</a>
+                <a href="#plan-estudios">Plan de Estudios</a>
+                <a href="#galeria">Galería</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Licenciatura en Pedagogía</h1>
+            <p>Formamos profesionales comprometidos con la transformación educativa, capaces de diseñar, implementar y evaluar procesos de enseñanza-aprendizaje innovadores en diversos contextos.</p>
+            <div class="btn-container">
+                <a href="#contacto" class="btn">Solicita Información</a>
+                <a href="#plan-estudios" class="btn btn-outline">Ver Plan de Estudios</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Estudiantes de pedagogía">
+                </div>
+                <div class="about-content">
+                    <h2>Formando los educadores del futuro</h2>
+                    <p>La Licenciatura en Pedagogía de la Universidad Atenea Palas tiene como objetivo formar profesionales con una sólida preparación teórica y metodológica en el campo educativo, capaces de analizar, diseñar, implementar y evaluar procesos de enseñanza-aprendizaje en diversos contextos.</p>
+                    <p>Nuestro programa se distingue por su enfoque humanista, innovador e interdisciplinario, que prepara a los estudiantes para enfrentar los retos educativos del siglo XXI con herramientas teóricas y prácticas de vanguardia.</p>
+                    <p>El plan de estudios está diseñado para desarrollar competencias en diseño curricular, evaluación educativa, tecnologías de la información aplicadas a la educación, orientación educativa y gestión de instituciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Program Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ventajas de estudiar Pedagogía con nosotros</h2>
+                <p>Nuestro programa ofrece una formación integral que combina teoría y práctica para formar profesionales competentes y comprometidos con la educación.</p>
+            </div>
+            
+            <div class="highlight-cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Prácticas profesionales">
+                    </div>
+                    <div class="card-body">
+                        <h3>Prácticas profesionales desde primer año</h3>
+                        <p>Acuerdos con más de 100 instituciones educativas para que nuestros estudiantes apliquen sus conocimientos en contextos reales desde el inicio de su formación.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">Conoce más</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Enfoque innovador">
+                    </div>
+                    <div class="card-body">
+                        <h3>Enfoque en pedagogías innovadoras</h3>
+                        <p>Formación en metodologías activas, educación emocional, neuroeducación y uso de tecnologías emergentes en el aula.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">Conoce más</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Internacionalización">
+                    </div>
+                    <div class="card-body">
+                        <h3>Oportunidades internacionales</h3>
+                        <p>Programas de intercambio con universidades de Europa y América Latina, y certificaciones internacionales en educación.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn">Conoce más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Curriculum Section -->
+    <section class="curriculum" id="plan-estudios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan de Estudios</h2>
+                <p>Nuestro programa de 9 cuatrimestres está diseñado para formar pedagogos con visión integral y capacidad de transformación educativa.</p>
+            </div>
+            
+            <div class="semester-tabs">
+                <button class="tab-btn active" data-tab="semester1">1° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester2">2° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester3">3° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester4">4° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester5">5° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester6">6° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester7">7° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester8">8° Cuatrimestre</button>
+                <button class="tab-btn" data-tab="semester9">9° Cuatrimestre</button>
+            </div>
+            
+            <div class="tab-content active" id="semester1">
+                <div class="subject-list">
+                    <div class="subject-card">
+                        <h4>Teorías Pedagógicas Contemporáneas</h4>
+                        <p>Estudio de los principales enfoques pedagógicos actuales y su aplicación en contextos educativos diversos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Psicología del Desarrollo</h4>
+                        <p>Análisis de las etapas del desarrollo humano y sus implicaciones en los procesos educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Historia de la Educación</h4>
+                        <p>Evolución de los sistemas educativos y su relación con el contexto sociocultural.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Metodología de la Investigación</h4>
+                        <p>Fundamentos para la investigación educativa cualitativa y cuantitativa.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Tecnologías para la Educación</h4>
+                        <p>Uso básico de herramientas tecnológicas aplicadas a contextos educativos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="semester2">
+                <div class="subject-list">
+                    <div class="subject-card">
+                        <h4>Diseño Curricular</h4>
+                        <p>Principios y modelos para el diseño y desarrollo de planes y programas educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Psicología del Aprendizaje</h4>
+                        <p>Teorías sobre cómo se produce el aprendizaje y su aplicación en el aula.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Filosofía de la Educación</h4>
+                        <p>Corrientes filosóficas y su influencia en los sistemas educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Estadística Aplicada a la Educación</h4>
+                        <p>Uso de herramientas estadísticas para el análisis de datos educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Educación Inclusiva</h4>
+                        <p>Estrategias para atender la diversidad en los contextos educativos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="semester3">
+                <div class="subject-list">
+                    <div class="subject-card">
+                        <h4>Evaluación Educativa</h4>
+                        <p>Modelos y técnicas para evaluar procesos y resultados educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Didáctica General</h4>
+                        <p>Estrategias y métodos para la enseñanza efectiva en diversos contextos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Sociología de la Educación</h4>
+                        <p>Análisis de la educación como fenómeno social y cultural.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Desarrollo de Materiales Educativos</h4>
+                        <p>Diseño y producción de recursos didácticos para diferentes niveles educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Orientación Educativa</h4>
+                        <p>Fundamentos de la orientación y tutoría en instituciones educativas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="semester4">
+                <div class="subject-list">
+                    <div class="subject-card">
+                        <h4>Educación y Tecnologías Digitales</h4>
+                        <p>Integración de tecnologías emergentes en procesos educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Planeación Educativa</h4>
+                        <p>Diseño, implementación y evaluación de proyectos educativos.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Neuroeducación</h4>
+                        <p>Aplicación de los conocimientos sobre el cerebro humano en los procesos de enseñanza-aprendizaje.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Educación Comparada</h4>
+                        <p>Análisis de sistemas educativos en diferentes países y culturas.</p>
+                    </div>
+                    <div class="subject-card">
+                        <h4>Taller de Expresión Oral y Escrita</h4>
+                        <p>Desarrollo de habilidades comunicativas para profesionales de la educación.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Los siguientes cuatrimestres seguirían el mismo patrón -->
+            
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios</h2>
+                <p>Lo que dicen nuestros egresados y estudiantes sobre el programa.</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="María González">
+                    <p class="testimonial-content">"La Licenciatura en Pedagogía de la Universidad Atenea Palas me brindó las herramientas teóricas y prácticas para desarrollarme como profesional en el campo educativo. Las oportunidades de prácticas desde primer año fueron clave para mi formación."</p>
+                    <p class="testimonial-author">María González</p>
+                    <p class="testimonial-role">Coordinadora Académica, Colegio Atenas</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Mendoza">
+                    <p class="testimonial-content">"El enfoque en pedagogías innovadoras y el contacto con docentes que están a la vanguardia de la investigación educativa hicieron que mi experiencia universitaria fuera transformadora. Hoy aplico estos conocimientos en mi trabajo como asesor pedagógico."</p>
+                    <p class="testimonial-author">Carlos Mendoza</p>
+                    <p class="testimonial-role">Asesor Pedagógico, Ministerio de Educación</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Torres">
+                    <p class="testimonial-content">"Como estudiante internacional, valoro mucho la calidad humana y académica de este programa. Los profesores tienen un trato cercano y las materias están diseñadas para responder a los retos actuales de la educación."</p>
+                    <p class="testimonial-author">Ana Torres</p>
+                    <p class="testimonial-role">Estudiante de Intercambio de Colombia</p>
+                </div>
+                
+                <div class="slider-nav">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vida Estudiantil</h2>
+                <p>Conoce nuestras instalaciones y actividades académicas y culturales.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Aulas">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Biblioteca">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratorios">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eventos académicos">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Actividades culturales">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Prácticas profesionales">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="cta" id="contacto">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transforma tu pasión por la educación en tu profesión</h2>
+                <p>Únete a nuestra comunidad de pedagogos comprometidos con la excelencia educativa y la innovación pedagógica.</p>
+                <a href="#" class="btn">Inscríbete Ahora</a>
+                <a href="#" class="btn btn-outline">Agendar cita informativa</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Universidad Atenea Palas</h3>
+                    <p>Institución comprometida con la formación de profesionales de la educación con visión humanista, crítica e innovadora.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Educación #456, Col. Universitaria, Ciudad</li>
+                        <li><i class="fas fa-phone"></i> Teléfono: (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> Email: pedagogia@uniateneapalas.edu.mx</li>
+                        <li><i class="fas fa-clock"></i> Horario: L-V 9:00 a 18:00 hrs</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Enlaces rápidos</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#about">Acerca del programa</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#plan-estudios">Plan de estudios</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#galeria">Galería</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Admisiones</a></li>
+                        <li><i class="fas fa-chevron-right"></i> <a href="#">Becas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Boletín informativo</h3>
+                    <p>Suscríbete para recibir información sobre eventos, convocatorias y novedades del programa.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Universidad Atenea Palas - Licenciatura en Pedagogía. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Testimonial slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto slide change
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
