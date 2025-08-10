@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+    <!-- Esta meta tag es CRUCIAL para el responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Configuración adicional recomendada -->
+    <meta property="og:title" content="Centro de Estudios Superiores Atenea">
+    <meta property="og:description" content="Institución educativa de excelencia académica">
+    <meta property="og:image" content="https://tudominio.com/img/logo-social.jpg">
+    <meta property="og:url" content="https://tudominio.com">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Estudios Superiores Atenea - Excelencia Académica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* PALETA DE COLORES VINO Y DORADO */
+        :root {
+            --vino-oscuro: #6d0d2c;      /* Color vino principal */
+            --vino-medio: #8a1a3a;       /* Variante más clara */
+            --vino-claro: #f8e8eb;       /* Fondo claro vino */
+            --dorado-oscuro: #b38b2d;     /* Dorado oscuro */
+            --dorado-medio: #d4af37;      /* Dorado principal */
+            --dorado-claro: #f5e6c2;      /* Dorado claro */
+            --gris-oscuro: #333333;       /* Textos principales */
+            --gris-medio: #666666;        /* Textos secundarios */
+            --gris-claro: #f9f9f9;        /* Fondos claros */
+            --blanco: #ffffff;            /* Blanco puro */
+            --negro: #000000;             /* Negro */
+        }
+
+        /* ESTILOS GENERALES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            background-color: var(--gris-claro);
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            color: var(--vino-oscuro);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* BOTONES */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--vino-oscuro);
+            color: var(--blanco);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            margin: 5px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--vino-medio);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--blanco);
+            color: var(--blanco);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--blanco);
+            color: var(--vino-oscuro);
+        }
+        
+        .btn-dorado {
+            background-color: var(--dorado-medio);
+            color: var(--vino-oscuro);
+        }
+        
+        .btn-dorado:hover {
+            background-color: var(--dorado-oscuro);
+            color: var(--blanco);
+        }
+        
+        /* ESTRUCTURA */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--vino-claro);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--vino-oscuro);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--dorado-medio);
+            margin: 15px auto 0;
+        }
+        
+        /* HEADER */
+        header {
+            background-color: var(--vino-oscuro);
+            color: var(--blanco);
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 100;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .logo-img {
+            height: 200px;
+            margin-right: 200px;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: var(--blanco);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--dorado-claro);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--dorado-medio);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(109, 13, 44, 0.9), rgba(109, 13, 44, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: var(--blanco);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--blanco);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--dorado-claro);
+        }
+        
+        /* FEATURES SECTION */
+        .features {
+            padding: 80px 0;
+            background-color: var(--blanco);
+        }
+        
+        .feature-card {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--dorado-medio);
+            margin-bottom: 25px;
+        }
+        
+        /* CARRERAS SECTION */
+        .carreras {
+            padding: 80px 0;
+            background-color: var(--vino-claro);
+        }
+        
+        .carrera-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .carrera-content {
+            padding: 25px;
+        }
+        
+        .carrera-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .carrera-duracion {
+            background-color: var(--dorado-claro);
+            color: var(--vino-oscuro);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* ADMISIONES SECTION */
+        .admisiones {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--vino-oscuro) 0%, var(--vino-medio) 100%);
+            color: var(--blanco);
+        }
+        
+        .admisiones-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .admisiones h2 {
+            color: var(--blanco);
+        }
+        
+        .pasos-admision {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .paso {
+            flex: 1;
+            min-width: 200px;
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+        
+        .paso-numero {
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* CONTACTO SECTION */
+        .contacto {
+            padding: 80px 0;
+            background-color: var(--blanco);
+        }
+        
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .form-container {
+            background-color: var(--vino-claro);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        textarea {
+            min-height: 150px;
+        }
+        
+        .contacto-info {
+            padding: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--dorado-medio);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* FOOTER */
+        footer {
+            background-color: var(--vino-oscuro);
+            color: var(--blanco);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: var(--blanco);
+            font-size: 1.3rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--dorado-medio);
+        }
+        
+        .footer-links h4 {
+            color: var(--blanco);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--dorado-claro);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--blanco);
+        }
+        
+        .newsletter input {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            width: 70%;
+        }
+        
+        .newsletter button {
+            background-color: var(--dorado-medio);
+            color: var(--vino-oscuro);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 30%;
+        }
+        
+        .newsletter button:hover {
+            background-color: var(--dorado-oscuro);
+            color: var(--blanco);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: var(--dorado-claro);
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contacto-grid {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                width: 100%;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                margin-top: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pasos-admision {
+                flex-direction: column;
+            }
+            
+            .paso {
+                margin-bottom: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .logo-container h1 {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter input,
+            .newsletter button {
+                width: 100%;
+                border-radius: 5px;
+                margin: 5px 0;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo CES Atenea" class="logo-img">
+                <h1>Centro de Estudios Superiores Atenea</h1>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#carreras">Carreras</a></li>
+                    <li><a href="#admisiones">Admisiones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#aplicar" class="btn">Aplicar ahora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Excelencia académica para el futuro</h2>
+            <p>Formamos profesionales líderes con valores humanos y visión global</p>
+            <div>
+                <a href="#carreras" class="btn">Explora nuestras carreras</a>
+                <a href="#admisiones" class="btn btn-outline">Proceso de admisión</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir el CES Atenea?</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap feature-icon"></i>
+                        <h3>Excelencia académica</h3>
+                        <p>Programas educativos de vanguardia con reconocimiento oficial</p>
+                        <a href="#" class="btn btn-dorado">Conoce más</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <i class="fas fa-chalkboard-teacher feature-icon"></i>
+                        <h3>Profesores expertos</h3>
+                        <p>Claustro docente con amplia experiencia profesional y académica</p>
+                        <a href="#" class="btn btn-dorado">Nuestros profesores</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="feature-card">
+                        <i class="fas fa-briefcase feature-icon"></i>
+                        <h3>Bolsa de trabajo</h3>
+                        <p>Vinculación con empresas líderes para tu desarrollo profesional</p>
+                        <a href="#" class="btn btn-dorado">Oportunidades</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARRERAS SECTION -->
+    <section id="carreras" class="carreras">
+        <div class="container">
+            <h2 class="section-title">Nuestras Carreras</h2>
+            
+            <div class="grid">
+                <!-- PEDAGOGÍA -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Pedagogía">
+                    <div class="carrera-content">
+                        <h3>Pedagogía</h3>
+                        <p>Formación integral para transformar la educación con enfoque humanista.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">8 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index.html/index3(pedagogia).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- INGENIERÍA EN TECNOLOGÍAS COMPUTACIONALES -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ingeniería en Tecnologías Computacionales">
+                    <div class="carrera-content">
+                        <h3>Ingeniería en Tecnologías Computacionales</h3>
+                        <p>Desarrolla soluciones tecnológicas innovadoras para el mundo digital.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">9 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index.html/index2(ingenieria).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MERCADOTECNIA -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Mercadotecnia">
+                    <div class="carrera-content">
+                        <h3>Mercadotecnia</h3>
+                        <p>Estrategias innovadoras para conectar marcas con sus audiencias.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">8 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index4(mercadotecnia).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ADMINISTRACIÓN DE EMPRESAS -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Administración de Empresas">
+                    <div class="carrera-content">
+                        <h3>Administración de Empresas</h3>
+                        <p>Liderazgo empresarial con visión estratégica y global.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">8 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index5(administracion).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CONTADURÍA PÚBLICA Y FINANZAS -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Contaduría Pública y Finanzas">
+                    <div class="carrera-content">
+                        <h3>Contaduría Pública y Finanzas</h3>
+                        <p>Expertos en gestión financiera y cumplimiento fiscal.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">9 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index6(contaduria).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LITERATURA DRAMÁTICA Y TEATRO -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Literatura Dramática y Teatro">
+                    <div class="carrera-content">
+                        <h3>Literatura Dramática y Teatro</h3>
+                        <p>Formación artística integral para creadores escénicos.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">8 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index7(literatura).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- COMERCIO INTERNACIONAL -->
+                <div class="card carrera-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Comercio Internacional">
+                    <div class="carrera-content">
+                        <h3>Comercio Internacional</h3>
+                        <p>Especialistas en negocios globales y relaciones económicas internacionales.</p>
+                        <div class="carrera-meta">
+                            <span class="carrera-duracion">8 semestres</span>
+                            <a href="file:///C:/Users/arthu/OneDrive/Desktop/pagina/index2.html/index/index8(comercio).html" class="btn">Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn">Ver todas las carreras</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISIONES SECTION -->
+    <section id="admisiones" class="admisiones">
+        <div class="container admisiones-container">
+            <h2 class="section-title" style="color: var(--blanco);">¿Listo para unirte a nuestra comunidad?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">El proceso de admisión para el próximo semestre ya está abierto. Aplica ahora y da el primer paso hacia tu futuro profesional.</p>
+            
+            <div class="pasos-admision">
+                <div class="paso">
+                    <div class="paso-numero">1</div>
+                    <h4>Registro en línea</h4>
+                    <p>Completa nuestro sencillo formulario de aplicación</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">2</div>
+                    <h4>Documentación</h4>
+                    <p>Envía tus documentos académicos requeridos</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">3</div>
+                    <h4>Entrevista</h4>
+                    <p>Programa tu entrevista con nuestro equipo académico</p>
+                </div>
+            </div>
+            
+            <div>
+                <a href="#" class="btn" style="margin-right: 15px;">Iniciar aplicación</a>
+                <a href="#" class="btn btn-outline">Descargar requisitos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO SECTION -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            
+            <div class="contacto-grid">
+                <div class="form-container">
+                    <h3 style="margin-bottom: 25px; color: var(--vino-oscuro);">Envía un mensaje</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <select id="asunto">
+                                <option>Información académica</option>
+                                <option>Admisiones</option>
+                                <option>Becas</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="contacto-info">
+                    <h3 style="margin-bottom: 30px; color: var(--vino-oscuro);">Información de contacto</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt info-icon"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Av. Universidad 1500, Col. Centro, Ciudad de México</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone info-icon"></i>
+                        <div>
+                            <h4>Teléfonos</h4>
+                            <p>Admisiones: 55 1234 5678</p>
+                            <p>Informes: 55 8765 4321</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope info-icon"></i>
+                        <div>
+                            <h4>Correos electrónicos</h4>
+                            <p>admisiones@cesatenea.edu.mx</p>
+                            <p>informes@cesatenea.edu.mx</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock info-icon"></i>
+                        <div>
+                            <h4>Horario de atención</h4>
+                            <p>Lunes a viernes: 8:00 am - 6:00 pm</p>
+                            <p>Sábados: 9:00 am - 2:00 pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="https://via.placeholder.com/200x60/6d0d2c/FFFFFF?text=CES+Atenea" alt="Logo CES Atenea" class="footer-logo">
+                    <p style="margin-bottom: 20px;">Formando profesionales con excelencia académica y valores humanos desde 1995.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces rápidos</h4>
+                    <ul>
+                        <li><a href="#">Biblioteca virtual</a></li>
+                        <li><a href="#">Portal estudiantil</a></li>
+                        <li><a href="#">Correo institucional</a></li>
+                        <li><a href="#">Calendario académico</a></li>
+                        <li><a href="#">Bolsa de trabajo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Carreras</h4>
+                    <ul>
+                        <li><a href="pedagogia.html">Pedagogía</a></li>
+                        <li><a href="ingenieria.html">Ingeniería en Tecnologías Computacionales</a></li>
+                        <li><a href="mercadotecnia.html">Mercadotecnia</a></li>
+                        <li><a href="administracion.html">Administración de Empresas</a></li>
+                        <li><a href="contaduria.html">Contaduría Pública y Finanzas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Newsletter</h4>
+                    <p style="margin-bottom: 15px; color: var(--dorado-claro);">Suscríbete para recibir información sobre eventos y noticias.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> Centro de Estudios Superiores Atenea. Todos los derechos reservados. | <a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Menú móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Desplazamiento suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Cerrar menú móvil si está abierto
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Manejo del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+        
+        // Año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Efecto de carga suave
+        document.body.style.opacity = '0';
+        window.addEventListener('DOMContentLoaded', function() {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        });
+    </script>
+    <script>
+    // Detectar dispositivo y ajustar si es necesario
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.body.classList.add('mobile-device');
+    }
+    
+    // Precargar recursos importantes
+    const preloadImages = ['hero.jpg', 'logo.png'];
+    preloadImages.forEach(img => {
+        const image = new Image();
+        image.src = img;
+    });
+</script>
+
+</body>
+
+</html>
